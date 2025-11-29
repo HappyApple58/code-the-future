@@ -1,70 +1,126 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
- <meta charset="utf-8">
- <title>the Focus Chamber
- </title>
- <style>
- body {
- color: rgb(255, 255, 255);
- text-align: center;
- font-family: Arial, sans-serif;
- }
- ul, ol {
- display: inline-block;
- }
- </style>
+  <meta charset="utf-8">
+  <title>The Focus Chamber</title>
+
+  <!-- Quicksand font -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background-color: rgb(97, 175, 183);
+      color: white;
+      text-align: center;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    ul, ol {
+      display: inline-block;
+      text-align: left;
+      margin: 20px;
+    }
+
+    /* HERO SECTION (GIF + Highlighted Text) */
+    .hero {
+      background-image: url("https://i.pinimg.com/originals/c4/0d/b6/c40db678aa354ba91257f6258a1521e1.gif");
+      background-size: cover;
+      background-position: center;
+      min-height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .highlight {
+      background: rgba(255, 255, 255, 0.75);
+      color: black;
+      padding: 15px 25px;
+      font-size: 2rem;
+      font-weight: 600;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    /* TABLE */
+    table {
+      margin: 40px auto;
+      border-collapse: collapse;
+      width: 70%;
+      font-size: 20px;
+    }
+
+    th, td {
+      border: 2px solid white;
+      padding: 12px 18px;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+  </style>
 </head>
 
-<body style="background-color: rgb(97, 175, 183);">
- <iframe src="https://i.pinimg.com/originals/c4/0d/b6/c40db678aa354ba91257f6258a1521e1.gif" height="300" width="2000" frameborder="0" scrolling="no" style="object-fit: cover;"></iframe>
 
+<body>
 
- <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
- <h1 style="font-family: 'Quicksand', sans-serif; font-size:55px; color:rgb(255, 255, 255)">
- <mark style="background-color: rgb(72, 153, 162); color: white; padding: 0 6px;">the Focus Chamber</mark>
- </h1>
- <i style="font-family: 'Quicksand', sans-serif; font-size:25px; color:rgb(255, 255, 255)">Feel accomplished. Get stuff done.</i>
+  <!-- Top GIF with Highlight -->
+  <div class="hero">
+    <div class="highlight">the Focus Chamber</div>
+  </div>
 
- <ul>
- <li>achieve your goals</li>
- <li>stay focused</li>
- <li>reduce stress</li>
- </ul> 
+  <h1 style="font-size: 55px; margin-top: 25px;">
+    <mark style="background-color: rgb(72, 153, 162); padding: 0 6px; color: white;">
+      the Focus Chamber
+    </mark>
+  </h1>
 
- <ol>
- <li>Get up.</li>
- <li>Get started.</li>
- <li>Get it done.</li>
- </ol>
+  <i style="font-size: 25px;">Feel accomplished. Get stuff done.</i>
 
- <table>
- <tr> 
- <th>Essential:</th>
- <th>Necessary:</th>
- <th>Ideal:</th>
- </tr>
- <tr>
- <td>Eat</td>
- <td>Get fresh air</td>
- <td>Stay happy</td>
+  <ul>
+    <li>achieve your goals</li>
+    <li>stay focused</li>
+    <li>reduce stress</li>
+  </ul>
 
- </tr>
- <tr>
- <td>Hydrate</td>
- <td>Move</td>
- <td>Grow skillset</td>
- </tr>
- <tr>
- <td>Sleep</td>
- <td>Keep workspace clean</td>
- <td>Be productive</td>
- </tr>
- </table>
+  <ol>
+    <li>Get up.</li>
+    <li>Get started.</li>
+    <li>Get it done.</li>
+  </ol>
 
- <iframe src="https://i.pinimg.com/originals/c4/0d/b6/c40db678aa354ba91257f6258a1521e1.gif" height="300" width="800" frameborder="0" scrolling="no" style="object-fit: cover;"></iframe>
+  <table>
+    <tr>
+      <th>Essential:</th>
+      <th>Necessary:</th>
+      <th>Ideal:</th>
+    </tr>
 
+    <tr>
+      <td>Eat</td>
+      <td>Get fresh air</td>
+      <td>Stay happy</td>
+    </tr>
 
+    <tr>
+      <td>Hydrate</td>
+      <td>Move</td>
+      <td>Grow skillset</td>
+    </tr>
+
+    <tr>
+      <td>Sleep</td>
+      <td>Keep workspace clean</td>
+      <td>Be productive</td>
+    </tr>
+  </table>
+
+  <!-- Bottom GIF -->
+  <div class="hero" style="min-height: 200px;"></div>
+
+</body>
 </html>
