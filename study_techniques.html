@@ -95,8 +95,20 @@
     align-self: auto;             
   }
 
+  /* High Contrast Mode (added) */
+  .high-contrast {
+    background-color: black !important;
+    color: yellow !important;
+  }
 
-
+  .high-contrast .hero { filter: brightness(40%); }
+  .high-contrast mark { background-color: yellow !important; color: black !important; }
+  .high-contrast table, .high-contrast th, .high-contrast td { border: 2px solid yellow !important; }
+  .high-contrast .nav-link { background-color: black !important; color: yellow !important; border-color: yellow !important; }
+  .high-contrast .nav-link.active { background-color: yellow !important; color: black !important; }
+  .high-contrast img { filter: contrast(200%); }
+  .high-contrast a { color: cyan !important; text-decoration: underline; }
+  .high-contrast .item { background: #222 !important; border-color: yellow !important; }
 
   </style>
 </head>
@@ -188,8 +200,36 @@
   <!-- bottom gif -->
   <div class="hero" style="min-height: 200px;"></div>
 
-  
+  <!-- single accessible contrast toggle button (fixed) -->
+  <button id="toggleContrast"
+    class="btn btn-dark"
+    aria-pressed="false"
+    style="position: fixed; top: 20px; right: 20px; z-index: 9999; margin: 20px; background: black; color: yellow; border: 2px solid yellow; padding: 8px 14px; border-radius: 10px; cursor: pointer;">
+    High Contrast
+  </button>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('toggleContrast');
+    if (!btn) return;
+    const body = document.body;
+
+    // restore saved preference on load
+    const saved = localStorage.getItem('highContrast');
+    const setState = (on) => {
+      body.classList.toggle('high-contrast', on);
+      btn.setAttribute('aria-pressed', String(on));
+    };
+    setState(saved === 'true');
+
+    // toggle and persist
+    btn.addEventListener('click', () => {
+      const enabled = !body.classList.contains('high-contrast');
+      setState(enabled);
+      localStorage.setItem('highContrast', String(enabled));
+    });
+  });
+  </script>
 
 </body>
 </html>
-<!DOCTYPE html>
