@@ -310,41 +310,36 @@
   <!-- bottom gif -->
   <div class="hero" style="min-height: 200px;"></div>
 
-  <script>
-    document.getElementById("contrastToggle").onclick = function () {
-    document.body.classList.toggle("high-contrast");
-  };
-  </script>
-  <script>
-  const contrastToggle = document.getElementById("toggleContrast");
-  const body = document.body;
+  <!-- single accessible contrast toggle button (fixed) -->
+  <button id="toggleContrast"
+    class="btn btn-dark"
+    aria-pressed="false"
+    style="position: fixed; top: 20px; right: 20px; z-index: 9999; margin: 20px; background: black; color: yellow; border: 2px solid yellow; padding: 8px 14px; border-radius: 10px; cursor: pointer;">
+    High Contrast
+  </button>
 
-  contrastToggle.addEventListener("click", () => {
-    body.classList.toggle("high-contrast");
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('toggleContrast');
+    if (!btn) return;
+    const body = document.body;
+
+    // apply saved preference on load
+    const saved = localStorage.getItem('highContrast');
+    const setState = (on) => {
+      body.classList.toggle('high-contrast', on);
+      btn.setAttribute('aria-pressed', String(on));
+    };
+    setState(saved === 'true');
+
+    // toggle and persist
+    btn.addEventListener('click', () => {
+      const enabled = !body.classList.contains('high-contrast');
+      setState(enabled);
+      localStorage.setItem('highContrast', String(enabled));
+    });
   });
-</script>
-
+  </script>
 
 </body>
-<button id="toggleContrast" class="btn btn-dark" style="margin: 20px;">
-  High Contrast Mode
-</button>
-
-
-<button id="contrastToggle" style="
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
-  background: black;
-  color: yellow;
-  border: 2px solid yellow;
-  padding: 8px 14px;
-  border-radius: 10px;
-  cursor: pointer;
-">
-High Contrast
-</button>
-
-
 </html>
