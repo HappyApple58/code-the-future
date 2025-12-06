@@ -96,6 +96,49 @@
   }
 
 
+    /* High Contrast Mode */
+  .high-contrast {
+    background-color: black !important;
+    color: yellow !important;
+  }
+
+  .high-contrast .hero {
+    filter: brightness(40%);
+  }
+
+  .high-contrast mark {
+    background-color: yellow !important;
+    color: black !important;
+  }
+
+  .high-contrast table,
+  .high-contrast th,
+  .high-contrast td {
+    border: 2px solid yellow !important;
+  }
+
+  .high-contrast .nav-link {
+    background-color: black !important;
+    color: yellow !important;
+    border-color: yellow !important;
+  }
+
+  .high-contrast .nav-link.active {
+    background-color: yellow !important;
+    color: black !important;
+  }
+
+  .high-contrast img {
+    filter: contrast(200%);
+  }
+
+  .high-contrast a {
+    color: yellow !important;
+    text-decoration: underline;
+  }
+
+
+
 
 
   </style>
@@ -237,5 +280,29 @@
   <!-- bottom gif -->
   <div class="hero" style="min-height: 200px;"></div>
 
+  <script>
+    document.getElementById("contrastToggle").onclick = function () {
+    document.body.classList.toggle("high-contrast");
+  };
+  </script>
+
+
 </body>
+
+<button id="contrastToggle" style="
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: black;
+  color: yellow;
+  border: 2px solid yellow;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+">
+High Contrast
+</button>
+
+
 </html>
