@@ -137,6 +137,36 @@
     text-decoration: underline;
   }
 
+  .high-contrast {
+  background-color: black !important;
+  color: yellow !important;
+  }
+
+  .high-contrast a {
+    color: cyan !important;
+  }
+
+  .high-contrast th, 
+  .high-contrast td {
+    border-color: yellow !important;
+  }
+
+  .high-contrast .nav-link {
+    --bs-nav-link-color: yellow !important;
+    --bs-nav-pills-link-active-color: black !important;
+    --bs-nav-pills-link-active-bg: yellow !important;
+  }
+
+  .high-contrast .item {
+    background: #222 !important;
+    border-color: yellow !important;
+  }
+
+  .high-contrast mark {
+    background-color: yellow !important;
+    color: black !important;
+  }
+
 
 
 
@@ -285,9 +315,21 @@
     document.body.classList.toggle("high-contrast");
   };
   </script>
+  <script>
+  const contrastToggle = document.getElementById("toggleContrast");
+  const body = document.body;
+
+  contrastToggle.addEventListener("click", () => {
+    body.classList.toggle("high-contrast");
+  });
+</script>
 
 
 </body>
+<button id="toggleContrast" class="btn btn-dark" style="margin: 20px;">
+  High Contrast Mode
+</button>
+
 
 <button id="contrastToggle" style="
   position: fixed;
