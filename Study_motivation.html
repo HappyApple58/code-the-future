@@ -80,22 +80,25 @@
   <i style="font-size:25px;">Get inspired to keep learning</i>
 
   <p style="margin: 30px auto; max-width: 800px;">
-    <!-- short motivational content goes here -->
-    Find reasons that matter to you, break goals into small steps, celebrate progress, and build a routine that makes studying manageable and rewarding.
+    Find the drive to learn:
   </p>
 
   <div class="hero" style="min-height:200px;"></div>
 
-  <!-- flexbox images -->
+  <!-- flexbox -->
   <div class="flex-container">
-    <img src="https://picsum.photos/200/120?random=1" class="item" alt="Study image 1">
-    <img src="https://picsum.photos/200/120?random=2" class="item" alt="Study image 2">
-    <img src="https://picsum.photos/200/120?random=3" class="item" alt="Study image 3">
-    <img src="https://picsum.photos/200/120?random=4" class="item" alt="Study image 4">
+    <img src="https://i.pinimg.com/736x/e7/af/91/e7af91e4b9262c04ce9cf1b0447f6f50.jpg" class="item" alt="Study image 1">
+    <img src="https://i.pinimg.com/1200x/bb/19/07/bb19076ac05eec145fff7dded855d09b.jpg" class="item" alt="Study image 2">
+    <img src="https://i.pinimg.com/736x/00/9a/03/009a037736ea40e460a76e306844707b.jpg" class="item" alt="Study image 3">
+    <img src="https://i.pinimg.com/736x/bc/05/8f/bc058f1c90c4de3d840bf08891414f62.jpg" class="item" alt="Study image 4">
+    <img src="https://i.pinimg.com/1200x/b9/2a/2f/b92a2f60ffd4328ba0deb2feeee9ef8e.jpg" class="item" alt="Study image 5">
+    <img src="https://i.pinimg.com/736x/91/46/85/914685f4fcbc25bd69367d0a41efbfe4.jpg" class="item" alt="Study image 6">
+    <img src="https://i.pinimg.com/736x/f8/95/c8/f895c854a5474f3e2f8512e462c315cd.jpg" class="item" alt="Study image 7">
+    <img src="https://i.pinimg.com/736x/97/c9/0b/97c90bf55a7a43ef0b35658b11df30d4.jpg" class="item" alt="Study image 8">
   </div>
 
 
-  <!-- single accessible contrast toggle button (fixed) -->
+  <!-- contrast button -->
   <button id="toggleContrast"
     class="btn btn-dark"
     aria-pressed="false"
@@ -109,7 +112,7 @@
     if (!btn) return;
     const body = document.body;
 
-    // restore saved preference on load
+    // restores preference
     const saved = localStorage.getItem('highContrast');
     const setState = (on) => {
       body.classList.toggle('high-contrast', on);
@@ -117,7 +120,7 @@
     };
     setState(saved === 'true');
 
-    // toggle and persist
+    // makes it work?
     btn.addEventListener('click', () => {
       const enabled = !body.classList.contains('high-contrast');
       setState(enabled);
